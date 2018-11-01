@@ -5,12 +5,10 @@ go:
 
 go_import_path: github.com/wangzitian0/golang-gin-starter-kit
 
-services:
-  - sqlite3
 
 install:
   - mkdir -p src/github.com/wangzitian0/golang-gin-starter-kit
-  - cp -r . src/github.com/wangzitian0/golang-gin-starter-kit
+  - cp -r ./* src/github.com/wangzitian0/golang-gin-starter-kit
   - go get -u github.com/pilu/fresh
   - go get -u golang.org/x/crypto/...
   - go get -u github.com/kardianos/govendor
