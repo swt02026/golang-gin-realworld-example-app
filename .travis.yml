@@ -1,18 +1,17 @@
 language: go
 
 go:
-  - 1.10
   - master
 
-# go_import_path: github.com/wangzitian0/golang-gin-starter-kit
+go_import_path: github.com/wangzitian0/golang-gin-starter-kit
 
 services:
   - sqlite3
 
 install:
-  - go get -d -v github.com/kardianos/govendor
-  - go get -d -v github.com/pilu/fresh
-  - go get -d -v golang.org/x/crypto/...
+  - go get -u github.com/pilu/fresh
+  - go get -u golang.org/x/crypto/...
+  - go get -u github.com/kardianos/govendor
   - govendor sync
 script:
 #  - go test -v ./...
