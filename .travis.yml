@@ -5,7 +5,7 @@ go:
   - 1.8.x
   - master
 
-go_import_path: github.com/wangzitian0/golang-gin-starter-kit
+# go_import_path: github.com/wangzitian0/golang-gin-starter-kit
 
 services:
   - sqlite3
