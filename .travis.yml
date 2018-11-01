@@ -11,7 +11,9 @@ services:
   - sqlite3
 
 install:
-  - go get -u github.com/wangzitian0/golang-gin-starter-kit
+  - go get -u github.com/kardianos/govendor
+  - go get -u github.com/pilu/fresh
+  - go get -u golang.org/x/crypto/...
   - go get -u github.com/kardianos/govendor
   - govendor sync
 script:
