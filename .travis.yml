@@ -10,10 +10,9 @@ services:
   - sqlite3
 
 install:
-  - go get -u github.com/kardianos/govendor
-  - go get -u github.com/pilu/fresh
-  - go get -u golang.org/x/crypto/...
-  - go get -u github.com/kardianos/govendor
+  - go get -d -v github.com/kardianos/govendor
+  - go get -d -v github.com/pilu/fresh
+  - go get -d -v golang.org/x/crypto/...
   - govendor sync
 script:
 #  - go test -v ./...
