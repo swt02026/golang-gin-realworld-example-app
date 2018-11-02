@@ -20,9 +20,9 @@ install:
   - go get -u github.com/kardianos/govendor
   - govendor sync
 script:
-#  - go test -v ./...
-  - bash ./scripts/gofmt.sh
-  - bash ./scripts/coverage.sh
+  - go test -v ./...
+  # - bash ./scripts/gofmt.sh
+  # - bash ./scripts/coverage.sh
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
