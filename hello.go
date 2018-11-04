@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-
+    // "strings"
+    "net/http"
 	"gopkg.in/gin-gonic/gin.v1"
-
 	"github.com/jinzhu/gorm"
 	"github.com/wangzitian0/golang-gin-starter-kit/articles"
 	"github.com/wangzitian0/golang-gin-starter-kit/common"
@@ -27,7 +27,6 @@ func main() {
 	defer db.Close()
 
 	r := gin.Default()
-
 	v1 := r.Group("/api")
 	users.UsersRegister(v1.Group("/users"))
 	v1.Use(users.AuthMiddleware(false))
@@ -61,13 +60,24 @@ func main() {
 	fmt.Println(userA)
 
 	//db.Save(&ArticleUserModel{
-	//    UserModelID:userA.ID,
-	//})
-	//var userAA ArticleUserModel
-	//db.Where(&ArticleUserModel{
-	//    UserModelID:userA.ID,
-	//}).First(&userAA)
-	//fmt.Println(userAA)
+		//    UserModelID:userA.ID,
+		//})
+		//var userAA ArticleUserModel
+		//db.Where(&ArticleUserModel{
+			//    UserModelID:userA.ID,
+			//}).First(&userAA)
+			//fmt.Println(userAA)
 
-	r.Run() // listen and serve on 0.0.0.0:8080
+			r.Use(Cors())
+			r.Run() // listen and serve on 0.0.0.0:8080
+		}
+
+
+func Cors() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.Header("Access-Control-Allow-Origin", "*")
+		c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
+		c.JSON(http.StatusOK, struct{}{})
+		c.Next()
+	}
 }
