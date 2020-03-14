@@ -50,7 +50,7 @@ func main() {
 	// test 1 to 1
 	tx1 := db.Begin()
 	userA := users.UserModel{
-		Username: "AAAAAAAAAAAAAAAA",
+		Username: "AAAAAAAAAjjAAAAAAA",
 		Email:    "aaaa@g.cn",
 		Bio:      "hehddeda",
 		Image:    nil,
