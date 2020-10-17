@@ -35,6 +35,6 @@ steps:
 substitutions:
   _PROJECT: golang-gin
   _REPO: gcr.io
-  _ZONE: us-central1-a
-  _CLUSTER: standard-cluster-1
+  _ZONE: us-central1-c
+  _CLUSTER: cluster-1
   _NAMESPACE: default
